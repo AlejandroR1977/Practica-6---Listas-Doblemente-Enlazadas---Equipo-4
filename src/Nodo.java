@@ -6,6 +6,7 @@ public class Nodo {
     //constructor para crear un nodo (Para insertar al final)
     public Nodo(int d){
         this.dato = d;
+        this.siguiente = null;
     }
     //constructor para crear un nodo (insertar al incio/entre nodos)
     public Nodo(int d, Nodo n){
