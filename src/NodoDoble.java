@@ -1,3 +1,4 @@
+//TODO @Walter
 public class NodoDoble {
 
     public int dato;  //campo de información
