@@ -23,7 +23,7 @@ public class Main {
                 "8. Mostrar los datos de inicio a fin\n"+
                 "9. Mostrar los datos de fin a inicio\n"+ //TODO Walter
                 "10. Salir\n","Menú de opciones",3)); 
-                */
+        */
         int opcion=0;
         int elemento;
         ListaDoble lista = new ListaDoble();
