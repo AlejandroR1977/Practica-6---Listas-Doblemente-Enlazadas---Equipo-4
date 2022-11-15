@@ -28,7 +28,8 @@ public class Main {
         int opcion=0;
         int elemento;
         ListaDoble lista = new ListaDoble();
-        
+
+
         do{
             try{
                 opcion = Integer.parseInt(JOptionPane.showInputDialog(null,
