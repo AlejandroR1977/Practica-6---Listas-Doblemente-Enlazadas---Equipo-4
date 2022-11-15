@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
 
         /*
-        En este método va toda la interfaz del usuario
+        En este método va toda la interfaz del usuario.
         Las clases NodoDoble y ListaDoble deben tener solo implementación (nada de interfaz o visualización),
         excepto los métodos de mostrarInicioFin y mostrarFinInicio (son los únicos que pueden imprimir en consola
         o en un JOptionPane desde la clase ListaDoble, lo demás de la interfaz visual debe estar aquí en Main.java).
