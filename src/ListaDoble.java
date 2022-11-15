@@ -19,20 +19,28 @@ public class ListaDoble {
     //Método para agregar un NodoDoble al Inicio de la Lista Doble
     public void insertarInicio(int dato) {
         //crear el nodo
-        NodoDoble New = new Nodo(dato);
+        NodoDoble New = new NodoDoble(dato);
         if (fin == null) { //Si la lista esta vacia mover el apintador al fin al nodo
             fin = inicio = New;
         }
         else{
-            new.siguiente = inicio;
+            New.siguiente = inicio;
             inicio.anterior = New;
             inicio = New;
         }
     }
 
     //Método para insertar al Final de la lista doble
-    public void insertarFinal(int dato){
-
+    public void insertarFinal(int dato){ //by Noriega
+        NodoDoble nuevo_final = new NodoDoble(dato);
+        if (fin == null && inicio == null){ //Si esta vacio solo se crea un nuevo nodo
+            fin = inicio = nuevo_final;
+        }
+        else {
+            fin.siguiente = nuevo_final;
+            nuevo_final.anterior = fin;
+            fin = nuevo_final;
+        }
     }
 
 
@@ -41,8 +49,32 @@ public class ListaDoble {
     número mayor al elemento que se encuentre en la lista, si no se encuentar un dato mayor
     se inserta al final */
 
-    public void insertarEnOrden(int dato){
-
+    public void insertarEnOrden(int dato){ //by Noriega
+        NodoDoble nuevo_nodo = new NodoDoble(dato);
+        if (fin == null && inicio == null){ //Si esta vacio solo se crea un nuevo nodo
+            fin = inicio = nuevo_nodo;
+        }
+        else{
+            NodoDoble actual=inicio;
+            while(actual!=null){
+                if (dato <= actual.dato) { //en caso de que el dato sea menor que el dato del primer nodo se insertar al inicio
+                    insertarInicio(dato);
+                    break;
+                }
+                else if (actual.siguiente == null) { //si se llega al final de la lista y aun no es menor, es mayor que todos los elementos, por lo tanto se inserta al final
+                    insertarFinal(dato);
+                    break;
+                }
+                else if (dato <= actual.siguiente.dato) {
+                    nuevo_nodo.siguiente = actual.siguiente;
+                    actual.siguiente = nuevo_nodo;
+                    nuevo_nodo.anterior = actual;
+                    nuevo_nodo.siguiente.anterior = nuevo_nodo;
+                    break;
+                }
+                actual = actual.siguiente;
+            }
+        }
     }
 
 
