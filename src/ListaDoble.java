@@ -17,9 +17,17 @@ public class ListaDoble {
     }
 
     //Método para agregar un NodoDoble al Inicio de la Lista Doble
-    public void insertarInicio(int dato){
-
-
+    public void insertarInicio(int dato) {
+        //crear el nodo
+        NodoDoble New = new Nodo(dato);
+        if (fin == null) { //Si la lista esta vacia mover el apintador al fin al nodo
+            fin = inicio = New;
+        }
+        else{
+            new.siguiente = inicio;
+            inicio.anterior = New;
+            inicio = New;
+        }
     }
 
     //Método para insertar al Final de la lista doble
@@ -80,7 +88,12 @@ public class ListaDoble {
 
     //Imprimir los datos de la lista doble de fin a inicio
     public void mostrarFinInicio(){
-
+        NodoDoble actual=fin;
+        System.out.println();
+        while(actual!=null){
+            System.out.print(actual.dato+" --> ");
+            actual = actual.anterior;
+        }
     }
 
 
